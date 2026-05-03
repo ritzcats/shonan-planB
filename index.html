@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>湘南 半日観光プランB【のりちゃん・美香ちゃんへ】</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: #f7f5f0; color: #1a1a1a; line-height: 1.7; padding: 2rem 1rem 4rem; }
+  .wrap { max-width: 700px; margin: 0 auto; }
+  .hero { text-align: center; margin-bottom: 2rem; padding: 2rem 1.5rem 1.5rem; background: #fff; border-radius: 12px; border: 1px solid #e5e0d8; }
+  .hero h1 { font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 600; letter-spacing: 0.06em; margin-bottom: 0.4rem; color: #1a1a1a; }
+  .hero .tag { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 20px; background: #e6f1fb; color: #185fa5; margin-bottom: 0.6rem; }
+  .hero p { font-size: 13px; color: #888; line-height: 1.8; }
+  .hero .route-summary { margin-top: 0.75rem; font-size: 12px; color: #aaa; letter-spacing: 0.04em; }
+  .legend { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 1.5rem; }
+  .leg-item { display: flex; align-items: center; gap: 5px; font-size: 12px; color: #666; }
+  .leg-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .section-label { font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #aaa; margin: 2rem 0 1rem; padding-bottom: 6px; border-bottom: 1px solid #e5e0d8; }
+  .route-wrap { border: 1px solid #e5e0d8; border-radius: 10px; overflow: hidden; margin-bottom: 1rem; background: #fff; }
+  .route-head { display: grid; grid-template-columns: 1fr 1fr; }
+  .rh-col { padding: 10px 14px; background: #f7f5f0; border-bottom: 1px solid #e5e0d8; }
+  .rh-col:first-child { border-right: 1px solid #e5e0d8; }
+  .rh-label { font-size: 10px; color: #aaa; letter-spacing: 0.1em; margin-bottom: 3px; }
+  .rh-title { font-size: 13px; font-weight: 500; color: #1a1a1a; }
+  .badge-rec { display: inline-block; font-size: 10px; padding: 1px 7px; border-radius: 20px; background: #e1f5ee; color: #0f6e56; margin-left: 4px; vertical-align: middle; }
+  .badge-alt { display: inline-block; font-size: 10px; padding: 1px 7px; border-radius: 20px; background: #e6f1fb; color: #185fa5; margin-left: 4px; vertical-align: middle; }
+  .route-body { display: grid; grid-template-columns: 1fr 1fr; }
+  .rb-col { padding: 12px 14px; font-size: 12px; color: #555; line-height: 1.9; }
+  .rb-col:first-child { border-right: 1px solid #e5e0d8; }
+  .rb-col strong { font-weight: 500; color: #1a1a1a; }
+  .person-box { border: 1px solid #e5e0d8; border-radius: 10px; padding: 12px 14px; background: #fff; margin-bottom: 10px; }
+  .person-box .pb-title { font-size: 12px; font-weight: 500; color: #1a1a1a; margin-bottom: 6px; }
+  .person-box p { font-size: 12px; color: #555; line-height: 1.9; }
+  .person-box strong { font-weight: 500; color: #1a1a1a; }
+  .meet-box { background: #fffbf3; border: 1px solid #f0e6c8; border-radius: 10px; padding: 12px 14px; margin-bottom: 1.5rem; }
+  .meet-box p { font-size: 12px; color: #666; line-height: 1.9; }
+  .meet-box strong { font-weight: 500; color: #1a1a1a; }
+  .timeline { display: flex; flex-direction: column; }
+  .stop { display: grid; grid-template-columns: 64px 1fr; gap: 0 14px; }
+  .stop-left { display: flex; flex-direction: column; align-items: center; }
+  .stop-time { font-size: 11px; font-weight: 500; color: #aaa; text-align: center; line-height: 1.4; padding-top: 4px; }
+  .stop-dot { width: 11px; height: 11px; border-radius: 50%; border: 2px solid; margin: 6px auto 0; flex-shrink: 0; }
+  .stop-line { width: 2px; flex: 1; min-height: 20px; background: #e5e0d8; margin: 0 auto; }
+  .stop-body { padding: 2px 0 20px; }
+  .stop-name { font-size: 15px; font-weight: 500; margin-bottom: 5px; color: #1a1a1a; }
+  .dur-badge { display: inline-block; font-size: 11px; padding: 2px 9px; border-radius: 20px; margin-bottom: 7px; }
+  .stop-desc { font-size: 13px; color: #666; line-height: 1.75; margin-bottom: 0; }
+  .tip-box { margin-top: 8px; padding: 10px 12px; border-radius: 8px; border: 1px solid #e5e0d8; background: #fafaf8; }
+  .tip-box p { font-size: 12px; color: #666; line-height: 1.85; margin: 0; }
+  .tip-box strong { font-weight: 500; color: #1a1a1a; }
+  .transfer-row { display: grid; grid-template-columns: 64px 1fr; gap: 0 14px; margin: 0; }
+  .tr-left { display: flex; flex-direction: column; align-items: center; }
+  .tr-line { width: 2px; background: #e5e0d8; }
+  .tr-badge { font-size: 11px; padding: 3px 10px; border-radius: 20px; background: #f0ede8; border: 1px solid #e5e0d8; color: #888; align-self: center; margin: 4px 0; line-height: 1.5; }
+  .d-green { border-color: #1d9e75; background: #1d9e75; }
+  .d-italian { border-color: #c0392b; background: #c0392b; }
+  .d-purple { border-color: #7f77dd; background: #7f77dd; }
+  .d-gray { border-color: #888780; background: #888780; }
+  .bg-green { background: #e1f5ee; color: #0f6e56; }
+  .bg-italian { background: #fdecea; color: #922b21; }
+  .bg-purple { background: #eeedfe; color: #534ab7; }
+  .bg-gray { background: #f1efe8; color: #5f5e5a; }
+  .notice-box { margin-top: 2rem; padding: 14px 16px; border-radius: 10px; border: 1px solid #e5e0d8; background: #fff; }
+  .notice-box p { font-size: 12px; color: #666; line-height: 1.95; }
+  .notice-box strong { font-weight: 500; color: #1a1a1a; }
+  .footer { text-align: center; font-size: 11px; color: #ccc; margin-top: 2.5rem; letter-spacing: 0.05em; }
+  @media (max-width: 520px) {
+    .route-body, .route-head { grid-template-columns: 1fr; }
+    .rb-col:first-child, .rh-col:first-child { border-right: none; border-bottom: 1px solid #e5e0d8; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>湘南 半日観光プランB</h1>
+    <div class="tag">江ノ島 → 寒川神社ルート</div>
+    <p>のりちゃん・美香ちゃんへ</p>
+    <p class="route-summary">四谷三丁目 &amp; 三軒茶屋 → 藤沢（合流）→ 江ノ島 → イル・キャンティ ランチ → 寒川神社 → 羽田空港</p>
+  </div>
+
+  <div class="legend">
+    <span class="leg-item"><span class="leg-dot" style="background:#1d9e75"></span>必須スポット</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#c0392b"></span>イタリアン</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#7f77dd"></span>修験・霊地</span>
+    <span class="leg-item"><span class="leg-dot" style="background:#888780"></span>移動</span>
+  </div>
+
+  <div class="section-label">出発ルートと待ち合わせ</div>
+  <div class="route-wrap">
+    <div class="route-head">
+      <div class="rh-col">
+        <div class="rh-label">のりちゃん（四谷三丁目）<span class="badge-rec">東海道線推奨</span></div>
+        <div class="rh-title">東海道線グリーン車ルート</div>
+      </div>
+      <div class="rh-col">
+        <div class="rh-label">美香ちゃん（三軒茶屋）<span class="badge-alt">東急→東海道</span></div>
+        <div class="rh-title">渋谷経由 東海道線ルート</div>
+      </div>
+    </div>
+    <div class="route-body">
+      <div class="rb-col">
+        <strong>出発 8:20〜8:30頃</strong><br>四谷三丁目駅<br>↓ 丸ノ内線（約5分）<br>東京駅<br>↓ JR東海道線 <strong>グリーン車</strong><br>　藤沢まで直通（約55分）<br><strong>9:20〜9:30頃 藤沢着</strong><br><br>
+        💺 グリーン車：事前購入780円（当日980円）Suicaで購入可<br>
+        ✅ ゆったり。乗り換えなし。<br>
+        💡 品川〜横浜で美香ちゃんと合流して一緒に乗るのもあり！
+      </div>
+      <div class="rb-col">
+        <strong>出発 8:20頃</strong><br>三軒茶屋駅<br>↓ 東急田園都市線（約5分）<br>渋谷駅<br>↓ JR湘南新宿ライン or 東海道線<br>　（品川または横浜乗り換え）<br><strong>9:20〜9:30頃 藤沢着</strong><br><br>
+        🎫 渋谷→藤沢：約580円（IC）<br>
+        ✅ 渋谷〜藤沢もグリーン車区間あり（事前780円）
+      </div>
+    </div>
+  </div>
+
+  <div class="meet-box">
+    <p>
+      <strong>🤝 待ち合わせ：JR藤沢駅 北口改札前　9:30集合</strong><br>
+      藤沢駅から小田急江ノ島線に乗り換えて片瀬江ノ島へ（約10分）。<br>今日は江ノ島を先に満喫してから、午後に寒川神社へ向かうルートです。<br>
+      <strong>💡 裏ワザ：</strong>のりちゃんが東海道線を選んだ場合、品川〜横浜で美香ちゃんと同じ電車に合流してグリーン車で一緒に移動できます！
+    </p>
+  </div>
+
+  <div class="section-label">午前 — 江ノ島</div>
+  <div class="timeline">
+
+    <div class="stop">
+      <div class="stop-left"><span class="stop-time">9:45</span><span class="stop-dot d-green"></span><span class="stop-line"></span></div>
+      <div class="stop-body">
+        <div class="stop-name">弁財天仲見世通り・地元派食べ歩き</div>
+        <span class="dur-badge bg-green">散策：15〜20分</span>
+        <p class="stop-desc">片瀬江ノ島駅から弁天橋を渡り、仲見世通りへ。青銅の鳥居が目印。</p>
+        <div class="tip-box"><p>
+          <strong>🍡 タコせんべいより渋い、地元派の2選</strong><br>
+          ・<strong>紀の国屋本店</strong>（江の島2-1-12）：さざえ・はまぐり・ほたて型の「江の島もなか」。明治創業の老舗。8:30〜18:00、水曜定休。<br>
+          ・<strong>島童子（しまわらし）の「しらすまん」</strong>：500円。地元のシラス・エビ・タケノコなどがぎっしり。知る人ぞ知る一品。
+        </p></div>
+      </div>
+    </div>
+
+    <div class="transfer-row">
+      <div class="tr-left"><div class="tr-line" style="height:14px"></div><span style="font-size:18px;color:#bbb">🛗</span><div class="tr-line" style="height:14px"></div></div>
+      <div style="display:flex;align-items:center"><span class="tr-badge">江ノ島エスカー（屋外エスカレーター）で山頂へ　360円　※Suica不可の場合あり、小銭準備を</span></div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-left"><span class="stop-time">10:15</span><span class="stop-dot d-green"></span><span class="stop-line"></span></div>
+      <div class="stop-body">
+        <div class="stop-name">江島神社（辺津宮 → 中津宮 → 奥津宮）</div>
+        <span class="dur-badge bg-green">参拝：35〜45分</span>
+        <p class="stop-desc">日本三弁天のひとつ。三宮をめぐりながら良縁・金運・芸能上達を祈願。</p>
+        <div class="tip-box"><p>
+          <strong>📍 参拝順路</strong><br>
+          ① 辺津宮：銭洗池 → 奉安殿（弁財天像、有料）<br>
+          ② 中津宮：相模湾を見渡す絶景 → 御朱印<br>
+          ③ 奥津宮：「八方睨みの亀」天井画（どの角度から見ても目が合う）<br>
+          ④ 奥津宮隣の龍宮（わだつみのみや）にも立ち寄りを<br>
+          <strong>📷 バエ：</strong>奥津宮の朱塗り社殿と海のコントラスト。鳥居の重なり構図が定番。
+        </p></div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-left"><span class="stop-time">11:00<br>〜11:30</span><span class="stop-dot d-italian"></span><span class="stop-line"></span></div>
+      <div class="stop-body">
+        <div class="stop-name">🍕 ランチ｜iL CHIANTI CAFE 江の島（イル・キャンティ・カフェ）</div>
+        <span class="dur-badge bg-italian">滞在目安：75〜90分</span>
+        <p class="stop-desc">江の島のてっぺんにある絶景イタリアン。シーキャンドルのすぐそばに位置し、三方ガラス張りの全席オーシャンビュー。眼下に広がる相模湾を見ながら、石窯焼きピッツァや湘南しらすを使ったイタリア料理を堪能。</p>
+        <div class="tip-box"><p>
+          <strong>📞 予約：</strong>電話のみ 0466-86-7758（ネット予約不可）<br>
+          <strong>⏰ 営業：</strong>11:00〜21:00（L.O. 20:00）、定休日なし<br>
+          <strong>📍 場所：</strong>江の島2-4-15（シーキャンドルすぐ横）<br>
+          <strong>🍕 おすすめ：</strong>「しらすのピッツァ」（地元しらす×石窯焼き）、「しらすのペペロンチーノ」、専属パティシエのドルチェ<br>
+          <strong>📷 バエポイント：</strong>相模湾一望のテラス席 or 三方ガラス張り席で食事の写真を。ワインとのペアリングも。<br>
+          <strong>⚠ 注意：</strong>人気店のため事前電話予約を強くおすすめ。テラス席希望の場合は必須。
+        </p></div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-left"><span class="stop-time">12:45</span><span class="stop-dot d-green"></span><span class="stop-line"></span></div>
+      <div class="stop-body">
+        <div class="stop-name">江の島シーキャンドル（展望灯台）</div>
+        <span class="dur-badge bg-green">滞在：20〜25分</span>
+        <p class="stop-desc">高さ約60m（海抜約120m）。富士山・丹沢・相模湾を360度一望。ランチ後すぐそばなのでセットで立ち寄りを。大人500円。</p>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-left"><span class="stop-time">13:15</span><span class="stop-dot d-purple"></span><span class="stop-line"></span></div>
+      <div class="stop-body">
+        <div class="stop-name">⛩ 稚児ヶ淵 &amp; 江の島岩屋（修験者向け必訪）</div>
+        <span class="dur-badge bg-purple">滞在：55〜65分</span>
+        <p class="stop-desc">シーキャンドルから崖下へ下って稚児ヶ淵へ。その先の岩屋洞窟は弘法大師が修行した聖地。午前中のうちに修験スポットを余裕をもって制覇できる。</p>
+        <div class="tip-box"><p>
+          <strong>📍 詳細</strong><br>
+          ① <strong>稚児ヶ淵</strong>：波食台地の絶壁展望地。龍神伝説の舞台。海と断崖の景観が圧巻。<br>
+          ② <strong>江の島岩屋</strong>（入場500円 / 最終入場16:00）：弘法大師修行の地。第一岩屋（奥行152m）・第二岩屋（56m）を探検。洞内に石仏・龍神像が安置。年中10℃台でひんやり。<br>
+          <strong>✨ 山伏tip：</strong>天女と五頭龍の縁起が残る第二岩屋は修験的世界観そのもの。龍神への礼拝を。<br>
+          <strong>💡 このルートの強み：</strong>13:15着なので最終入場16:00まで余裕たっぷり！プランAの「ギリギリ感」がない。
+        </p></div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-left"><span class="stop-time">14:20</span><span class="stop-dot d-gray"></span><span class="stop-line"></span></div>
+      <div class="stop-body">
+        <div class="stop-name">🚢 べんてん丸（遊覧船）または 徒歩で戻る</div>
+        <span class="dur-badge bg-gray">天候で選択</span>
+        <p class="stop-desc">岩屋から片瀬方面への帰路は天候次第で2択。</p>
+        <div class="tip-box"><p>
+          <strong>☀ 晴天・波穏やかなら「べんてん丸」がおすすめ</strong><br>
+          稚児ヶ淵乗り場 → 弁天橋乗り場（約6分、大人700円）。船上から見る江ノ島の断崖と富士山が絶景。<br>
+          🌊 <strong>荒天・波高時は運休あり。</strong>当日朝に確認を。TEL：0466-22-2233<br>
+          <strong>🌧 雨天・波が高い日：</strong>来た道（奥津宮側）を徒歩で戻る（約20〜25分）。
+        </p></div>
+      </div>
+    </div>
+
+    <div class="transfer-row">
+      <div class="tr-left"><div class="tr-line" style="height:14px"></div><span style="font-size:18px;color:#bbb">🚃</span><div class="tr-line" style="height:14px"></div></div>
+      <div style="display:flex;align-items:center"><span class="tr-badge">片瀬江ノ島 → 藤沢（小田急・約10分）→ 茅ヶ崎（東海道線・約9分）→ 宮山（JR相模線・約15分）　計約40分</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">午後 — 寒川神社</div>
+  <div class="timeline">
+
+    <div class="stop">
+      <div class="stop-left"><span class="stop-time">15:10<br>〜15:20</span><span class="stop-dot d-green"></span><span class="stop-line"></span></div>
+      <div class="stop-body">
+        <div class="stop-name">寒川神社</div>
+        <span class="dur-badge bg-green">滞在目安：60〜70分</span>
+        <p class="stop-desc">全国唯一の「八方除け」の守護神。約1,600年の歴史を誇る相模国一宮。宮山駅から徒歩5分。午後の静かな時間帯に参拝。</p>
+        <div class="tip-box"><p>
+          <strong>📍 おすすめ参拝順路</strong><br>
+          ① 三の鳥居・神池（鯉が泳ぐ写真スポット）をくぐって参道へ<br>
+          ② 手水舎で清める<br>
+          ③ 御本殿を参拝（二礼二拍手一礼）<br>
+          ④ 社務所で御朱印（8:00〜17:00、初穂料500円）※17:00までに！<br>
+          ⑤ 授与品コーナー（「八角守」がデザイン的で人気）<br>
+          ⑥ 鎮守の杜「Koyo」でお土産チェック<br>
+          <strong>⚠ 注意：</strong>御朱印受付は17:00まで。15:20着なら余裕あり。
+        </p></div>
+      </div>
+    </div>
+
+    <div class="transfer-row">
+      <div class="tr-left"><div class="tr-line" style="height:14px"></div><span style="font-size:18px;color:#bbb">🚃</span><div class="tr-line" style="height:14px"></div></div>
+      <div style="display:flex;align-items:center"><span class="tr-badge">宮山 → 茅ヶ崎（相模線・約15分）→ 品川（東海道線・約45分）→ 羽田空港（京急・約15分）　計約80分</span></div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-left"><span class="stop-time">16:30<br>〜16:45</span><span class="stop-dot d-gray"></span><span class="stop-line"></span></div>
+      <div class="stop-body">
+        <div class="stop-name">宮山駅 出発</div>
+        <p class="stop-desc">JR相模線→茅ヶ崎→東海道線→品川→京急で羽田空港へ。</p>
+        <div class="tip-box"><p>
+          <strong>⚠ 時間管理：</strong>寒川神社での参拝に集中しすぎて16:45を過ぎないように！<br>
+          <strong>💡 このルートの強み：</strong>江ノ島での岩屋16:00ギリギリ問題がなく、修験スポットをゆっくり楽しめる。寒川神社も午後の静かな時間帯に参拝できる。
+        </p></div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-left"><span class="stop-time">18:00<br>〜18:30</span><span class="stop-dot d-gray"></span></div>
+      <div class="stop-body">
+        <div class="stop-name">✈ 羽田空港 到着・搭乗手続き</div>
+        <p class="stop-desc">国内線チェックイン・保安検査を済ませて搭乗待合へ。20:00発フライトまでゆとりあり。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="notice-box">
+    <p>
+      <strong>📌 事前準備チェックリスト</strong><br>
+      ☐ イル・キャンティ・カフェを<strong>必ず電話予約</strong>（0466-86-7758）。テラス席希望は必須。ネット予約不可。<br>
+      ☐ 東海道線グリーン車はSuicaで事前購入すると780円（車内購入は980円）。<br>
+      ☐ べんてん丸は荒天時運休。当日朝に確認（0466-22-2233）。<br>
+      ☐ 寒川神社の御朱印受付は17:00まで。16:30出発を守れば問題なし。<br>
+      ☐ 御朱印帳持参なら江島神社（中津宮）・寒川神社で2社分いただける。<br>
+      ☐ エスカーはSuica不可の場合あり、小銭（360円分）を用意しておく。<br><br>
+      <strong>📷 バエ撮影スポットまとめ</strong><br>
+      奥津宮の朱塗り社殿＆海 / イル・キャンティのオーシャンビュー席×ピッツァ / シーキャンドルからの富士山 / べんてん丸船上からの断崖と島 / 寒川神社の神池＆鳥居<br><br>
+      <strong>🆚 プランAとの比較</strong><br>
+      ・江ノ島を午前中に回るので岩屋16:00問題がなく、修験スポットをゆっくり楽しめる<br>
+      ・ランチが天青（和食）からイル・キャンティ（絶景イタリアン）に変わり、より江ノ島らしい体験に<br>
+      ・寒川神社は午後の静かな時間帯（人が少ない傾向）
+    </p>
+  </div>
+
+  <div class="footer">楽しい旅を！ Have a wonderful trip ✈</div>
+</div>
+</body>
+</html>
